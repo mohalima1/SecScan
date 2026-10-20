@@ -1,0 +1,93 @@
+{
+  "illustrative": true,
+  "scan_id": "44444444-4444-4444-8444-444444444444",
+  "target": "http://example.test/",
+  "timestamp": "2026-01-01T00:00:00+00:00",
+  "duration_seconds": 30,
+  "outcome": "completed",
+  "total_findings": 1,
+  "raw_finding_count": 2,
+  "tools_selected": [
+    "zap",
+    "nikto",
+    "nmap"
+  ],
+  "tools_ran": [
+    "zap",
+    "nikto",
+    "nmap"
+  ],
+  "tool_results": {
+    "zap": {
+      "status": "completed",
+      "finding_count": 1
+    },
+    "nikto": {
+      "status": "completed",
+      "finding_count": 1
+    },
+    "nmap": {
+      "status": "completed",
+      "finding_count": 0
+    }
+  },
+  "counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0,
+    "info": 0
+  },
+  "findings": [
+    {
+      "id": "illustrative-header-issue",
+      "issue_type": "missing-clickjacking-protection",
+      "title": "Missing Anti-Clickjacking Header",
+      "severity": "medium",
+      "url": "http://example.test/",
+      "parameter": "",
+      "description": "Illustrative response without frame-embedding protection.",
+      "recommendation": "Review the intended embedding policy and configure CSP frame-ancestors as appropriate.",
+      "status": "reported",
+      "confidence": "corroborated",
+      "tools": [
+        "nikto",
+        "zap"
+      ],
+      "occurrences": 2,
+      "sources": [
+        {
+          "tool": "zap",
+          "title": "Missing Anti-clickjacking Header",
+          "severity": "medium",
+          "url": "http://example.test/",
+          "parameter": "",
+          "evidence": "Illustrative evidence: no frame protection header in the fixture response.",
+          "source_confidence": "Medium"
+        },
+        {
+          "tool": "nikto",
+          "title": "Missing Anti-Clickjacking Header",
+          "severity": "low",
+          "url": "http://example.test/",
+          "parameter": "",
+          "evidence": "Illustrative evidence: X-Frame-Options header is not present.",
+          "source_confidence": "scanner-reported"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "tool": "nmap",
+      "title": "Open port 80/tcp",
+      "host": "example.test",
+      "port": 80,
+      "protocol": "tcp",
+      "service": "http",
+      "product": "",
+      "version": "",
+      "description": "Illustrative service observation, not proof of a vulnerability."
+    }
+  ]
+}

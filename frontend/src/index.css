@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --background: 220 26% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 189 94% 43%;
+    --primary-foreground: 220 26% 8%;
+
+    --secondary: 220 17% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 17% 20%;
+    --muted-foreground: 215 20% 72%;
+
+    --accent: 190 30% 18%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 85% 72%;
+    --destructive-foreground: 220 26% 8%;
+
+    --border: 220 17% 20%;
+    --input: 220 17% 20%;
+    --ring: 189 94% 43%;
+
+    --radius: 0.75rem;
+    --selection-surface: 190 42% 14%;
+
+    --success: 142 72% 80%;
+    --success-surface: 142 35% 14%;
+    --warning: 48 97% 77%;
+    --warning-surface: 42 35% 15%;
+
+    --critical: 0 96% 89%;
+    --critical-border: 0 91% 71%;
+    --critical-surface: 0 37% 15%;
+    --high: 33 98% 83%;
+    --high-border: 27 96% 61%;
+    --high-surface: 25 40% 15%;
+    --medium: 48 97% 77%;
+    --medium-border: 43 96% 56%;
+    --medium-surface: 42 35% 15%;
+    --low: 200 94% 86%;
+    --low-border: 199 89% 60%;
+    --low-surface: 200 32% 16%;
+    --informational: 210 40% 98%;
+    --informational-border: 215 20% 55%;
+    --informational-surface: 220 17% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  h1, h2 { text-wrap: balance; }
+  ::selection { background: hsl(var(--primary) / 0.3); }
+  input { caret-color: hsl(var(--primary)); }
+  progress {
+    appearance: none;
+    overflow: hidden;
+    border: 0;
+    border-radius: 999px;
+    background: hsl(var(--muted));
+  }
+  progress::-webkit-progress-bar { background: hsl(var(--muted)); }
+  progress::-webkit-progress-value { border-radius: 999px; background: hsl(var(--primary)); }
+  progress::-moz-progress-bar { border-radius: 999px; background: hsl(var(--primary)); }
+  * { scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background)); }
+  summary:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 4px; }
+}

@@ -1,0 +1,37 @@
+# Python, local scan data, archived accounts and secrets
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+.uv-cache/
+.uv-python/
+.tools/
+venv/
+env/
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite*
+backend/instance/
+backend/reports/
+backend/nikto_*.txt
+
+# Frontend builds, dependencies and local caches
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+.cache/
+.npm-cache/
+.superpowers/
+.worktrees/
+
+# Logs and editors
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
